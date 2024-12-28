@@ -22,7 +22,7 @@ const LoginPage = () => {
     };
     try {
       const response = await fetch(
-        `url/user/${isSignup ? 'register' : 'login'}`,
+        `${url}/user/${isSignup ? 'register' : 'login'}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
