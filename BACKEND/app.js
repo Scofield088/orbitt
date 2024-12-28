@@ -13,8 +13,6 @@ connectToDb();
 // }));
 app.use(cors({
   origin: 'https://frontend-scog.onrender.com',  // Replace with your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],    // Allow the methods you're using
-  credentials: true,  // Allow cookies to be sent in cross-origin requests
 }));
 
 app.use(express.json());
