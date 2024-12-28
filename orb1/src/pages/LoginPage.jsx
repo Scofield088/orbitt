@@ -7,6 +7,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const url="https://orbitt.onrender.com";
 
   const handleToggle = () => {
     setIsSignup(!isSignup);
@@ -21,7 +22,7 @@ const LoginPage = () => {
     };
     try {
       const response = await fetch(
-        `http://localhost:4001/user/${isSignup ? 'register' : 'login'}`,
+        `url/user/${isSignup ? 'register' : 'login'}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
