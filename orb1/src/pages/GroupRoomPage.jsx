@@ -12,12 +12,12 @@ const GroupRoom = () => {
   const [groupName, setGroupName] = useState('');
   const [input, setInput] = useState('');
   const navigate = useNavigate();
-  const url="https://orbitt.onrender.com";
+
 
   // Create a room
   const handleCreateRoom = async () => {
     try {
-      const response = await fetch('url/group', {
+      const response = await fetch('https://orbitt.onrender.com/group', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const GroupRoom = () => {
   // Join a room
   const handleJoinRoom = async () => {
     try {
-      const response = await fetch(`url/group/${groupLink}`);
+      const response = await fetch(`https://orbitt.onrender.com/group/${groupLink}`);
       const data = await response.json();
       if (response.ok) {
         setMessages(data.messages);
@@ -61,7 +61,7 @@ const GroupRoom = () => {
   const handleSendMessage = async () => {
     if (input.trim()) {
       try {
-        const response = await fetch(`url/group/${groupLink}/message`, {
+        const response = await fetch(`https://orbitt.onrender.com/group/${groupLink}/message`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const GroupRoom = () => {
     const fileNames = uploadedFiles.map((file) => file.name);
 
     try {
-      const response = await fetch(`url/group/${groupLink}/upload`, {
+      const response = await fetch(`https://orbitt.onrender.com/group/${groupLink}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
