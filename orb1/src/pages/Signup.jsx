@@ -6,6 +6,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const url="https://orbitt.onrender.com"
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent page reload on form submit
@@ -16,7 +17,7 @@ const Signup = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:4001/user/register', {
+      const response = await fetch('url/user/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
